@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block breadcrumbs %}
+    {% include 'includes/breadcrumbs.html' %}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="row my-2 gap-3">
+    {% comment %} {% include 'catalog/blocks/_list_category.html' %} {% endcomment %}
+
+    <div class="block-content table-container">
+        {% comment %} {{book.get_absolute_url}} {% endcomment %}
+        <p class='lead'> Book "<a href="{{ book.get_absolute_url }}">{{ book.name }}</a>" was added to cart</p>
+        {% include 'cart/blocks/_cart.html' %}
+        <div class="d-flex justify-content-between">
+            <a href="{% url 'catalog' %}" class="lead green-outline-button-cart">Continue shopping</a>
+            <a href="{% url 'create_order' %}" class="lead green-button-cart">Make order</a>
+        </div>        
+    </div>
+    
+</div>
+
+{% endblock %}

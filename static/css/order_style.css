@@ -1,0 +1,23 @@
+
+.order-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-text {
+    color: var(--main-color-one);
+}
+
+.order-items {
+    padding: var(--padding-l);
+    width: 60%;
+}
+
+.order-data {
+    padding: var(--padding-l);
+    width: 35%;
+}
+
+.button-order {
+    background-color: var(--secondary-color-two);
+}

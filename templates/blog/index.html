@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content%}
+<div class='block-content'>
+    <div class="div-main-image">
+        <img src="{% static 'img/posterBlog.svg' %}">
+    </div>
+    <div class="for-main-text">
+        <p class="lead-text">In this corner of the internet, words come alive, and narratives unfold like vibrant 
+            tapestries. This blog is more than a blog; it's a refuge where literary enthusiasts gather to 
+            indulge in their passion for the written word. Whether you're a seasoned reader searching for your next 
+            literary obsession or a curious wanderer venturing into the world of books, this is where your journey 
+            begins.</p>
+        <p class="lead-text">With each turn of the page, our virtual shelves are stocked with diverse genres, timeless classics, and hidden gems waiting to be discovered. From epic sagas that span centuries to intimate character studies that mirror our own experiences, we're here to guide you through the vast landscape of literature.</p>
+        <p class="lead-text">So, dear reader, whether you're sipping a cup of tea in a cozy corner or venturing beyond your comfort zone, let this blog be your companion, your guide, and your source of inspiration in the enchanting world of books. Welcome, and let the journey through the written word begin.</p>
+    </div>
+</div>
+{% include 'blog/blocks/tags.html' %}
+<div class="for-cards">
+    {% for article in articles %}
+        {% include 'blog/blocks/article_card.html' %}
+    {% endfor %}
+</div>
+<a href="{% url 'all_articles' %}" class="all-articles-button lead">All articles</a>
+{% endblock %}

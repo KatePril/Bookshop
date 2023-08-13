@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content%}
+<div class="for-cards">
+    {% for user in users %}
+        {% if user != request.user %}
+            <div class="card-3">
+                {% include 'users/blocks/user_card.html'%}
+            </div> 
+        {% endif %}      
+    {% endfor %}
+</div>
+{% endblock %}

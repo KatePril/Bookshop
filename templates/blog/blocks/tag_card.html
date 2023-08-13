@@ -1,0 +1,10 @@
+<div class="tag-card">
+    <div class="tag-text">
+        <a href="{% url 'tag' slug=tag.slug %}" class="tag-card-link lead">#{{tag.name}}</a>
+    </div>
+    <a href="{% url 'delete_tag' tag.id %}" style="width:50%;">
+        <button class="tag-delete-btn lead" >
+            Delete tag
+        </button>
+    </a>
+</div>

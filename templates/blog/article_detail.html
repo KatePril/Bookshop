@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content%}
+<div class="block-content">
+    <div class="article-card-text">
+        <h1 style="text-align:center;">{{article.title}}</h1>
+        <div class="article-info-container">
+            <p class="lead" style="margin: 0;">
+                <strong style="font-weight: bold;">About: </strong>
+                <a href="{{article.related_book.get_absolute_url}}" class="book-link">{{article.related_book.name}}</a>
+            </p>
+            <p class="lead" style="margin: 0;">
+                <strong style="font-weight: bold;">Published: </strong>
+                {{article.created_at}}
+            </p>
+        </div>
+        {% if request.user.id == article.author.id or request.user.is_admin %}
+            <div class="for-card-button">
+                <a href="{% url 'edit_article' article.slug %}" style="width:100%;">
+                    <button class="button-outline-card lead">
+                        Edit
+                    </button>
+                </a>
+            </div>
+            {% endif %}
+        <div class="lead">{{article.text|safe}}</div>
+    </div>
+</div>
+{% if user.is_authenticated %}
+    {% include 'shop/blocks/add_comment_form.html' %}
+{% endif %}
+{% for comment in comments %}
+    {% include 'shop/blocks/comment.html' %}
+{% empty %} 
+    <div class="block-content" style="padding: var(--padding-l); margin-top: var(--padding-l);">
+        <p class="lead">No comments here yet</p>
+    </div>
+{% endfor %}
+{% endblock %}

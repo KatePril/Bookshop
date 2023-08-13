@@ -1,0 +1,86 @@
+.table-container {
+    padding: var(--padding-l);
+}
+
+.table-position {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.table-custom {
+    /* --bs-table-color-type: initial;
+    --bs-table-bg-type: initial;
+    --bs-table-color-state: initial;
+    --bs-table-bg-state: initial;
+    --bs-table-color: var(--bs-body-color);
+    --bs-table-bg: var(--bs-body-bg);
+    --bs-table-border-color: var(--bs-border-color);
+    --bs-table-accent-bg: transparent;
+    --bs-table-striped-color: var(--bs-body-color);
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+    --bs-table-active-color: var(--bs-body-color);
+    --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+    --bs-table-hover-color: var(--bs-body-color);
+    --bs-table-hover-bg: rgba(0, 0, 0, 0.075); */
+    width: 100%;
+    margin-bottom: 1rem;
+    vertical-align: top;
+    /* border: var(--border-w) solid ;
+    border-color: var(--main-color-one); */
+    background-color: var(--secondary-color-two);
+}
+
+.table-head {
+    border-bottom: var(--border-w) solid  var(--main-color-one);
+    padding-bottom: var(--padding-m);
+    margin-bottom: var(--padding-m);
+}
+
+.table-bottom {
+    margin-top: var(--padding-m);
+    padding-top: var(--padding-m);
+    border-top: var(--border-w) solid  var(--main-color-one);
+}
+
+.table-link {
+    text-decoration: none;
+    color: var(--main-color-one);
+}
+
+.table-link:hover {
+    text-decoration: none;
+    color: var(--main-color-two);
+}
+
+.green-outline-button-cart {
+    padding: var(--padding-m);
+    text-decoration: none;
+    height: 50px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-color-one);
+    border: var(--border-w) solid var(--main-color-one);
+    border-radius: var(--border-r-s);
+}
+
+.green-outline-button-cart:hover {
+    color: var(--secondary-color-two);
+    background-color: var(--main-color-one);
+}
+
+.green-button-cart {
+    padding: var(--padding-s);
+    text-decoration: none;
+    color: var(--secondary-color-two);
+    background-color: var(--main-color-one);
+    border: var(--border-w) solid var(--main-color-one);
+    border-radius: var(--border-r-s);
+    height: 50px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

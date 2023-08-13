@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content%}
+<div class="for-cards">
+    {% for book in books %}
+        <div class="card-3">
+            {% include 'includes/book_card.html'%}
+        </div>        
+    {% endfor %}
+</div>
+{% endblock %}

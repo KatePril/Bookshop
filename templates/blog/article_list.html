@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content%}
+{% include 'blog/blocks/tags.html' %}
+{% if articles %}
+<div class="for-cards">
+    {% for article in articles %}
+        {% include 'blog/blocks/article_card.html' %}
+    {% endfor %}
+</div>
+{% else %}
+<h4 style="text-align: center; color: var(--main-color-two); margin-top: var(--padding-l);">No articles found</h4>
+<a href="{% url 'all_articles' %}" class="all-articles-button lead">All articles</a>
+{% endif %}
+{% endblock %}

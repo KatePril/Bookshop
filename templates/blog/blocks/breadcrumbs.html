@@ -1,0 +1,18 @@
+<div class='content-nav'>
+    <div class='col-10  align-items-center d-flex'>
+        <ol class="breadcrumb my-0">
+            <li class="breadcrumb-item"><a href="{%url 'blog' %}"><i class="fas fa-home"></i></a></li>
+            
+            {% for url, name in breadcrumbs.items %}
+                {% if name != 'Blog' %}
+                    {% if url == 'current' %}
+                    <li class="breadcrumb-item active" aria-current="page">{{ name }}</li>
+                    {% else %}
+                        <li class="breadcrumb-item"><a href="{{ url }}">{{ name }}</a></li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </ol>
+        
+    </div>
+</div>

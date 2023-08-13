@@ -1,0 +1,32 @@
+{% load static %}
+<div>
+    <div class="block-content card">
+        <div>
+            {% if book.is_best_saled %}
+            <div class="best-saled"><p class="lead" style="margin: 0;">Best saled</p></div>
+            {% endif %}
+            <div class="for-card-image">
+                {% if book.main_image.image.url %}
+                    <img class="card-image" src="{{book.main_image.image.url}}">
+                {% else %}
+                    <img src="{% static 'img/tmb.png' %}" alt="{{ book.name }}" style="width:100%;">
+                {% endif %}
+            </div>
+        </div>
+        <h2 class="card-h">{{book.name}}</h2>
+        {%if book.quantity < 3 %}
+            <div class="almost-sold lead">Almost sold out!</div>
+        {% endif %}
+        <div class="for-info">
+            <div class="info-item lead">Quantity: {{book.quantity}}</div>
+            <div class="info-item lead">Price: {{book.price}}</div>
+        </div>
+        <div class="for-card-button">
+            <a href="{{ book.get_absolute_url }}" style="width:100%;">
+                <button class="button-outline-card lead">
+                    Details
+                </button>
+            </a>
+        </div>
+    </div>
+</div>

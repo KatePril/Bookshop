@@ -1,0 +1,11 @@
+{% load static %}
+<div class="block-content for-related-article">
+    {% if article.image %}
+        <img src="{{article.image.url}}" class="related-article-image">
+    {% else %}
+        <img src="{% static 'img/tmb.png' %}" alt="{{ book.name }}" class="related-article-image">
+    {% endif %}
+    <div class="for-related-article-text">
+        <a href="{{ article.get_absolute_url }}" class="lead related-article-link">{{article.title}}</a>
+    </div>
+</div>

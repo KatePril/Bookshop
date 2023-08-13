@@ -1,0 +1,107 @@
+.tags-container {
+    margin-top: var(--padding-l);
+    padding: var(--padding-l);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tag-link {
+    text-decoration: none;
+    color: var(--main-color-one);
+    margin: var(--padding-s) var(--padding-m) var(--padding-s) var(--padding-m);
+}
+
+.tag-link {
+    text-decoration: none;
+    color: var(--main-color-one);
+}
+
+.tag-link:hover {
+    color: var(--main-color-two);
+}
+
+.article-card {
+    width: 30%;
+    overflow: hidden;
+}
+.article-card-text {
+    padding: var(--padding-m);
+}
+
+.book-link {
+    text-decoration: none;
+    color: var(--main-color-one);
+}
+
+.book-link:hover {
+    color: var(--main-color-two);
+}
+
+.article-info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: var(--border-w) solid var(--main-color-one);
+    border-radius: var(--border-r-s);
+    padding: var(--padding-s);
+    margin-bottom: var(--padding-s);
+    margin-top: var(--padding-m);
+}
+
+.all-articles-button {
+    width: 100%;
+    border: var(--border-w) solid var(--main-color-two);
+    border-radius: var(--border-r-s);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--padding-m);
+    color: var(--main-color-two);
+    text-decoration: none;
+    margin-top: var(--padding-l);
+}
+
+.all-articles-button:hover {
+    color: var(--main-color-one);
+    background-color: var(--main-color-two);
+}
+
+.tag-delete-btn {
+    border: var(--border-w) solid var(--main-color-two);
+    border-radius: 0 var(--border-r-s) var(--border-r-s) 0;
+    background-color: var(--main-color-one);
+    align-items: center;
+    padding: var(--padding-s);
+    color: var(--main-color-two);
+    text-decoration: none;
+}
+
+.tag-delete-btn:hover {
+    color: var(--main-color-one);
+    background-color: var(--main-color-two);
+}
+
+.tag-text {
+    width: 50%;
+    border: var(--border-w) solid var(--main-color-two);
+    border-radius: var(--border-r-s) 0 0 var(--border-r-s);
+    background-color: var(--main-color-two);
+    padding: var(--padding-s);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tag-card-link {
+    text-decoration: none;
+    color: var(--main-color-one);
+}
+
+.tag-card-link:hover {
+    color: var(--secondary-color-two);
+}
+
+.tag-card {
+    display: flex;
+    flex-direction: row;
+}

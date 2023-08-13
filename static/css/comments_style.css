@@ -1,0 +1,49 @@
+.for-photo-comment {
+    overflow: hidden;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.user-data-comment {
+    display: flex;
+    align-items: center;
+}
+
+.comment-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comment-info-text {
+    margin-bottom: 0;
+    margin-left: 15px;
+}
+
+.hr-comment {
+    border: var(--border-w) solid var(--main-color-one);
+    background-color: var(--main-color-one);
+}
+
+.for-comment-form {
+    margin-top: var(--padding-l);
+    padding: var(--padding-l);
+}
+
+.green-outline-button-comment {
+    padding: var(--padding-s);
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-color-one);
+    background-color: var(--secondary-color-two);
+    border: var(--border-w) solid var(--main-color-one);
+    border-radius: var(--border-r-s);
+}
+.green-outline-button-comment:hover {
+    color: var(--secondary-color-two);
+    background-color: var(--main-color-one);
+}

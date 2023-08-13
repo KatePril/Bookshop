@@ -1,0 +1,30 @@
+.for-related-articles {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.for-related-article {
+    display: flex;
+    margin:var(--padding-l) var(--padding-m) var(--padding-m) var(--padding-m);
+    border: var(--border-w) solid var(--main-color-two);
+}
+
+.for-related-article-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--padding-m);
+}
+
+.related-article-image {
+    width: 100px;
+}
+
+.related-article-link {
+    text-decoration: none;
+    color: var(--main-color-one);
+}
+
+.related-article-link:hover {
+    color: var(--main-color-two);
+}

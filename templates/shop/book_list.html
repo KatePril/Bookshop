@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block breadcrumbs %}
+    {% include 'includes/breadcrumbs.html' %}
+{% endblock %}
+{% block content %}
+<div class="for-list-nav">
+    <div class="for-nav-container">
+    {% include 'shop/blocks/category_list.html'%}
+    </div>
+    <div class="for-card-container">
+        <div class="block-content">
+            <h1 class="category-header" style="text-align: left;">{{category.name}}</h1>
+            <div class="category-container">
+                {% if category.description %}
+                    <p class="lead">{{category.description}}</p>
+                {% else %}
+                    <p class="lead">No description provided</p>
+                {% endif %}
+            </div>
+        </div>
+        {% if books %}
+            <div class="for-cards" style="margin-top: 0px;">
+                {% for book in books %}
+                <div class="card-2">
+                    {% include 'includes/book_card.html'%}
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <h2 class="no-product-msg">No products found</h2>
+        {% endif %}
+        
+    </div>
+</div>
+
+{% endblock %}

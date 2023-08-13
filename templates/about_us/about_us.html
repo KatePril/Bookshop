@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content%}
+<div class='block-content'>
+    <div class="div-main-image">
+        <img src="{% static 'img/poster2.svg' %}">
+    </div>
+    <div class="for-main-text">
+        <p class="lead-text">
+            Welcome to our online bookshop, your one-stop destination for literary delights and captivating reads! 
+            Here, we celebrate the magic of literature and the joy of reading, offering a vast collection of books 
+            that cater to every taste and preference.</p>
+        <p class="lead-text">Browse through our virtual shelves, where you'll find a curated selection of fiction,  non-fiction, bestsellers, classics, and contemporary gems. Immerse yourself in the enchanting worlds crafted by renowned authors, embark on thrilling adventures, or unravel the mysteries of the universe through our diverse array of genres.</p>
+        <p class="lead-text">Our dedication to quality extends to every aspect, as we take pride in offering both new 
+            releases and timeless masterpieces. Each book is handpicked to guarantee an enriching and fulfilling 
+            reading experience. From Pulitzer Prize winners to debut authors, we showcase a wide range of talents, 
+            ensuring there's something for everyone.</p>
+        <p class="lead-text">Customer satisfaction is at the heart of our values, and we offer a secure and 
+            convenient shopping experience. Our responsive customer support team is always ready to assist you, 
+            ensuring your queries and concerns are promptly addressed.</p>
+        <p class="lead-text">We value the love for reading, and that's why we believe that books are not just 
+            products but portals to new worlds and gateways to knowledge. So, whether you're an avid reader or just 
+            starting your literary journey, our online bookshop welcomes you to a world of endless imagination, 
+            exploration, and learning. Let the pages turn, and the adventures begin!</p>
+    </div>
+    <div class="for-big-button">
+        <a href="{% url 'blog' %}" style="width:100%;">
+            <button class="button-outline">
+                Visit our blog
+            </button>
+        </a>
+    </div> 
+</div>
+<div class="for-cards">
+    {% for book in books %}
+        <div class="card-3">
+            {% include 'includes/book_card.html'%}
+        </div>        
+    {% endfor %}
+</div>
+{% endblock %}

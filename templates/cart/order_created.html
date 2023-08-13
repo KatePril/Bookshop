@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block breadcrumbs %}
+    {% include 'includes/breadcrumbs.html' %}
+{% endblock %}
+
+
+{% block content%}
+
+{% comment %} <div class="row my-2 gap-3"> {% endcomment %}
+
+    <div class="block-content" style="padding:var(--padding-l);">
+
+        <h3 class = "mb-4">Thank you for making order</h3>
+        <p>Your manager will contact you as sson as possible</p>
+        <p>Your order <b>№{{ order.id }}</b>.</p>
+        <p>A letter with information about your order was sent to your email</p>
+
+       
+        
+    </div>
+
+{% comment %} </div> {% endcomment %}
+
+{% endblock %}

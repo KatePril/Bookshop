@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block breadcrumbs %}
+    {% include 'includes/breadcrumbs.html' %}
+{% endblock %}
+{% block content %}
+    <div class="block-content block-info">
+        <div class="for-main-image-detail">
+            {% if book.main_image.image.url %}
+                <img class="card-image" src="{{book.main_image.image.url}}">
+            {% else %}
+                <img src="{% static 'img/tmb.png' %}" alt="{{ book.name }}" class="img-thumbnail">
+            {% endif %}
+        </div>
+        <div class="for-info-detail">
+            {% if book.is_best_saled %}
+                <div class="best-saled"><p class="lead" style="margin: 0;">Best saled</p></div>
+            {% endif %}
+            <h2 class="card-h">{{book.name}}</h2>
+            {%if book.quantity < 3 %}
+                <div class="almost-sold lead">Almost sold out!</div>
+            {% endif %}
+            <div class="for-info">
+                <div class="info-item lead">Quantity: {{book.quantity}}</div>
+                <div class="info-item lead">Price: {{book.price}}</div>
+            </div>
+            {% if request.user.id == book.owner.id or request.user.is_admin %}
+            <div class="for-card-button">
+                <a href="{% url 'edit_product' book.slug %}" style="width:100%;">
+                    <button class="button-outline-card lead">
+                        Edit
+                    </button>
+                </a>
+            </div>
+            <div class="for-card-button">
+                <a href="{% url 'delete_book' book.id  %}" style="width:100%;">
+                    <button class="button-outline-card lead">
+                        Delete
+                    </button>
+                </a>
+            </div>
+            {% endif %}
+            {% if book.quantity %}
+                {% if request.user.id != book.owner.id%}
+                    {% if user.is_authenticated %}
+                        <form action="{% url 'add_to_cart' %}" method="get">
+                            <input type="hidden" name="book" value="{{ book.id }}">
+                            <div class="for-cart-button">
+                                <input type="number" min="1" step="1" max="{{ book.quantity }}" value="1" class="form-control" name="quantity">
+                                <button class="add-to-cart-button lead" type="submit" id="button-addon1"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+                            </div>
+                        </form>
+                    {% else %}
+                        <div class="almost-sold lead">You need to log in or sign up before adding books to cart</div>
+                    {% endif %}
+                {% endif %}
+            {% else %}
+                <div class="almost-sold lead">Product has ended</div>
+            {% endif %}
+
+        </div>
+    </div>
+    {% if related_articles %}
+    <h2 style="margin-top: var(--padding-m); color: var(--secondary-color-two);">Related articles</h2>
+    <div class="for-related-articles">
+        {% for article in related_articles %}
+        {% include 'shop/blocks/related_article.html' %}
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% if book.description %}
+    <div class="block-content lead block-description">{{book.description|safe}}</div>
+    {% endif %}
+    <div class="for-images-detail">
+        {% for image in book.images.all %}
+            {% if image.image.url != book.main_image.image.url %}
+                <div class="for-image-detail">
+                    {% if request.user.id == book.owner.id or request.user.is_admin %}
+                    {% comment %} <a href="{{ image.image.url }}" class="product-image" data-lightbox="roadtrip"> {% endcomment %}
+                    <img class="image-detail" src="{{image.image.url}}" alt="">
+                    <div class="for-image-buttons">
+                        <a href="{% url 'delete_image' slug=book.slug pk=image.id %}" class="button-image orange-outline-button orange-outline-button-image-detail lead">Delete</a>
+                        <a href="{% url 'set_main_image' slug=book.slug pk=image.id %}" class="button-image orange-button-image orange-button-image-detail lead">Main</a>
+                    </div>
+                    {% else %}
+                    {% comment %} <a href="{{ image.image.url }}" class="product-image" data-lightbox="roadtrip"> {% endcomment %}
+                    <img class="image-detail-not-owner" src="{{image.image.url}}" alt="">
+                    {% endif %}     
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% if user.is_authenticated %}
+        {% include 'shop/blocks/add_comment_form.html' %}
+    {% endif %}
+    {% for comment in comments %}
+        {% include 'shop/blocks/comment.html' %}
+    {% empty %} 
+        <div class="block-content" style="padding: var(--padding-l); margin-top: var(--padding-l);">
+            <p class="lead">No comments here yet</p>
+        </div>
+    {% endfor %}
+{% endblock %}

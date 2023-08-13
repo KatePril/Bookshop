@@ -1,0 +1,29 @@
+{% load static %}
+<div>
+    <div class="block-content card">
+        <div class="d-flex flex-column align-items-center text-center">
+            <div class="for-photo" style='margin-top:var(--padding-l);'>
+                {% if user.image %}
+                    <img src="{{user.image.url}}" alt="Admin" class="profile-photo" width="150" >
+                {% else %}
+                    <img src="{% static 'img/avatar.png' %}"  style="width:100%;">
+                {% endif %}
+            </div>
+        </div>
+        <div class="article-card-text">
+            <h2 style="text-align: center;">{{user.username}}</h2>
+            {% if not user.is_admin %}
+                <a href="{% url 'make_admin' user.id %}" style="width:100%;">
+                    <button class="button-outline-card lead" style="margin-top: var(--padding-m);">
+                        Make admin
+                    </button>
+                </a>
+            {% endif %}
+            <a href="{% url 'delete_user' user.id %}" style="width:100%;">
+                <button class="button-outline-card lead" style="margin-top: var(--padding-m);">
+                    Delete user
+                </button>
+            </a>
+        </div>
+    </div>
+</div>

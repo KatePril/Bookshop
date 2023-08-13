@@ -1,0 +1,18 @@
+{% load static %}
+<div class="block-content" style="padding: var(--padding-l); margin-top: var(--padding-l);">
+    <div class="comment-info">
+        <div class="user-data-comment">
+            <div class="for-photo-comment">
+                {% if user.image %}
+                    <img src="{{user.image.url}}" alt="Admin" class="profile-photo" width="150" >
+                {% else %}
+                    <img src="{% static 'img/avatar.png' %}"  style="width:100%;">
+                {% endif %}
+            </div>
+            <p class="comment-info-text"><strong>{{comment.user.username}}</strong></p>
+        </div>
+        <p class="comment-info-text"><strong>{{comment.created_at}}</strong></p>
+    </div>
+    <hr class="hr-comment">
+    <p class="lead">{{comment.text}}</p>            
+</div>

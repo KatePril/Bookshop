@@ -1,0 +1,30 @@
+{% load static %}
+<div class="block-content article-card card card-3">
+    <div class="for-card-image">
+        {% if article.image %}
+            <img class="card-image" src="{{article.image.url}}">
+        {% else %}
+            <img src="{% static 'img/tmb.png' %}" alt="{{ book.name }}" style="width:100%;">
+        {% endif %}
+    </div>
+    <div class="article-card-text">
+        <h2 style="text-align: center;">{{article.title}}</h2>
+        <p class="lead">
+            <b>About: </b>
+            <a href="{{article.related_book.get_absolute_url}}" class="book-link">{{article.related_book.name}}</a>
+        </p>
+        <p>{{article.preview}}</p>
+        <a href="{{ article.get_absolute_url }}" style="width:100%;">
+            <button class="button-outline-card lead">
+                Read full article
+            </button>
+        </a>
+        {% if article.author == request.user or request.user.is_admin %}
+        <a href="{% url 'delete_article' slug=article.slug pk=request.user.id%}" style="width:100%;">
+            <button class="button-outline-card lead" style="margin-top: var(--padding-m);">
+                Delete article
+            </button>
+        </a>
+        {% endif %}
+    </div>
+</div>

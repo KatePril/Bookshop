@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block breadcrumbs %}
+    {% include 'includes/breadcrumbs.html' %}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="order-container">
+    {% comment %} {% include 'catalog/blocks/_list_category.html' %} {% endcomment %}
+
+    <div class="block-content order-items">
+
+        <h3 class = "mb-3 order-text">Cart</h3>
+
+        {% include 'cart/blocks/_cart.html' %}
+        
+    </div>
+    <div class="block-content order-data">
+        <h3 class = "mb-3 order-text">Your data</h3>
+        <div class="col-12">
+            {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endif %}
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="first_name" class="form-label">First name</label>
+                    <input type="text" class="form-control" id="first_name" name="first_name" value="{{ form.data.first_name }}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="last_name" class="form-label">Last name</label>
+                    <input type="text" class="form-control" id="last_name" name="last_name" required value="{{ form.data.last_name }}">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="email" name="email" required value="{{ form.data.email }}">
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone number</label>
+                    <input type="text" class="form-control" id="phone" name="phone" required value="{{ form.data.phone }}">
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <textarea name="address" id="address" class="form-control" rows="3">{{ form.data.address }}</textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="comments" class="form-label">Comment</label>
+                    <textarea name="comments" id="comment" class="form-control" rows="3">{{ form.data.comment }}</textarea>
+                </div>
+                <button type="submit" class="lead green-outline-button-cart button-order" style="width:100%;">Confirm order</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {% if books %}
+        <div class="for-cards" style="margin-top: 0px;">
+            {% for book in books %}
+            <div class="card-3">
+                {% include 'includes/book_card.html'%}
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <h2 class="no-product-msg">No books found</h2>
+    {% endif %}
+{% endblock %}

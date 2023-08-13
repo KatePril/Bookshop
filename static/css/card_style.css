@@ -1,0 +1,96 @@
+.for-cards {
+    margin-top: var(--padding-l);
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-around; */
+}
+
+.card-3 {
+    width: 30%;
+    margin: var(--padding-l);
+}
+
+.card-2 {
+    width: 45%;
+    margin: var(--padding-l);
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.best-saled {
+    width: 100%;
+    background-color: var(--main-color-two);
+    color: var(--main-color-one);
+    padding: var(--padding-s);
+    /* border-radius: var(--border-r-l) var(--border-r-l) 0 0; */
+    display: flex;
+}
+
+.for-card-image {
+    width: 100%;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+}
+
+.card-h {
+    text-align: center;
+    margin-top: var(--padding-s);
+    margin-bottom: var(--padding-s);
+}
+
+.almost-sold {
+    width: 100%;
+    padding-top: var(--padding-s);
+    padding-bottom: var(--padding-s);
+    background-color: var(--main-color-one);
+    color: var(--main-color-two);
+    text-align: center;
+}
+
+.for-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: var(--padding-s);
+    margin-bottom: var(--padding-s);
+}
+
+.info-item {
+    width: 48%;
+    color: var(--main-color-one);
+    border: var(--border-w) solid var(--main-color-one);
+    border-radius: var(--border-r-s);
+    padding: var(--padding-s);
+}
+.for-card-button {
+    margin-left: var(--padding-s);
+    margin-right: var(--padding-s);
+    margin-bottom: var(--padding-s);
+}
+
+.button-outline-card {
+    padding: var(--padding-s);
+    border: var(--border-w) solid var(--main-color-one);
+    border-radius: var(--border-r-s);
+    background-color: var(--secondary-color-two);
+    color: var(--main-color-one);
+    width: 100%;
+}
+
+.button-outline-card:hover {
+    background-color: var(--main-color-one);
+    color: var(--main-color-two);
+}
+

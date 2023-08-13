@@ -1,0 +1,21 @@
+{% load static %}
+<div>
+    <div class="block-content card">
+        <div class="for-card-image">
+            {% if category.image %}
+                <img class="card-image" src="{{category.image.url}}">
+            {% else %}
+                <img src="{% static 'img/tmb.png' %}" style="width:100%;">
+            {% endif %}
+        </div>
+        <div class="article-card-text">
+            <h2 style="text-align: center;">{{category.name}}</h2>
+            <p>{{category.description}}</p>
+            <a href="{% url 'delete_category' pk=category.id %}" style="width:100%;">
+                <button class="button-outline-card lead" style="margin-top: var(--padding-m);">
+                    Delete category
+                </button>
+            </a>
+        </div>
+    </div>
+</div>

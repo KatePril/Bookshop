@@ -1,0 +1,8 @@
+<div class="block-content for-comment-form">
+    <h3>Leave a comment</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="lead green-outline-button-comment" type="submit" value="Add comment">
+    </form>
+</div>

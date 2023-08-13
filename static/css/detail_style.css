@@ -1,0 +1,108 @@
+.block-description {
+    margin-top: var(--padding-s);
+    padding: var(--padding-l);
+}
+
+.block-info {
+    display: flex;
+    overflow: hidden;
+}
+
+.for-main-image-detail {
+    width: 40%;
+}
+
+.for-info-detail {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: var(--padding-m);
+    /* justify-content: space-between; */
+}
+
+.for-images-detail {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.for-image-detail {
+    width: 30%;
+    margin: var(--padding-b) var(--padding-l) 0 var(--padding-l);
+}
+
+.image-detail {
+    width: 100%;
+    border-radius: var(--border-r-l) var(--border-r-l) 0 0;
+    border-left: var(--border-w) solid var(--main-color-two);
+    border-right: var(--border-w) solid var(--main-color-two);
+    border-top: var(--border-w) solid var(--main-color-two);
+    overflow: hidden;
+}
+
+.image-detail-not-owner {
+    width: 100%;
+    border-radius: var(--border-r-l);
+    border: var(--border-w) solid var(--main-color-two);
+    overflow: hidden;
+}
+
+.for-image-buttons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.button-image {
+    width: 50%;
+    padding: var(--padding-s);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.orange-outline-button {
+    border: var(--border-w) solid var(--main-color-two);
+    color: var(--main-color-two);
+}
+
+.orange-outline-button:hover {
+    background-color: var(--main-color-two);
+    color: var(--main-color-one);
+}
+
+.orange-button-image {
+    border: var(--border-w) solid var(--main-color-two);
+    color: var(--main-color-one);
+    background-color: var(--main-color-two);
+}
+
+.orange-outline-button-image-detail {
+    border-radius: 0 0 0 var(--border-r-l);
+}
+
+.orange-button-image-detail {
+    border-radius: 0 0 var(--border-r-l) 0;
+}
+
+.for-cart-button {
+    margin-left: var(--padding-s);
+    margin-right: var(--padding-s);
+    margin-bottom: var(--padding-s);
+    display: flex;
+}
+
+.add-to-cart-button {
+    width: 200px;
+    padding: var(--padding-s);
+    border-radius: var(--border-r-s);
+    border: var(--border-w) solid var(--main-color-one);
+    background-color: var(--secondary-color-two);
+    color: var(--main-color-one);
+}
+
+.add-to-cart-button:hover {
+    background-color: var(--main-color-one);
+    color: var(--secondary-color-two);
+}

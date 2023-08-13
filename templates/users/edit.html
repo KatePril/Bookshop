@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='block-content form-div'>
+    <form method='POST' enctype='multipart/form-data'>
+        {% csrf_token %}
+        {{form.media}}
+        {{form.as_p}}
+        <button class='button-outline-card submit-btn' type='submit'>Submit changes</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+label {
+    color: var(--main-color-one);
+    font-size: 20px;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.form-div {
+    padding: var(--padding-l);
+}
+
+.submit-btn {
+    font-size: 20px;
+}

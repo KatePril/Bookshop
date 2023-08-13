@@ -1,0 +1,28 @@
+{% load static %}
+<nav>
+    <div class="inside-nav">
+        <a href="{% url 'about_us' %}">
+            <img class="img-logo" src="{% static 'img/logo5.svg' %}" alt="" style="width: 200px;">
+        </a>
+        <div class="for-nav-links">
+            <a href="{% url 'about_us' %}" class="nav-links">About us</a>
+            <a href="{% url 'catalog' %}" class="nav-links">Catalog</a>
+            <a href="{% url 'blog' %}" class="nav-links">Blog</a>
+        </div>
+    </div>
+    
+    <div class="inside-nav">
+        <div class="account-buttons">
+            {% if user.is_authenticated %}
+                <a href="{% url 'cart' %}" class="green-outline-button account-button cart-button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+                <a href="{% url 'profile' %}" class="green-outline-button account-button account-button-green ">Profile</a>
+                <a href="{% url 'logout' %}" class="account-button account-button-orange">Logout</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="green-outline-button account-button account-button-green ">Login</a>
+                <a href="{% url 'signup' %}" class="account-button account-button-orange">Sign-up</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>

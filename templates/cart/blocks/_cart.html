@@ -1,0 +1,32 @@
+{% load mathfilters %}
+<table class="table-custom lead">
+    <thead>
+    <tr class="table-head">
+        <th scope="col">Image</th>
+        <th scope="col">Book</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+        <th scope="col">Sum</th>
+        <th scope="col">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for row in cart.cart %}
+        <tr>
+            <td><a href="{% url 'book' slug=row.book.slug %}"><img class="img-thumbnail" width="70" src="{{ row.book.main_image.image.url }}" alt=""></a></td>
+            <td><a href="{% url 'book' slug=row.book.slug %}" class="table-link">{{ row.book.name }}</a></td>
+            <td>{{ row.quantity }}</td>
+            <td>{{ row.book.price }}</td>
+            <td>{{ row.book.price|mul:row.quantity }} $</td>
+            <td>
+                <a href="{% url 'delete_from_cart' pk=row.book.id %}" class="btn btn-danger"><i
+                        class="fa fa-trash"></i></a>
+            </td>
+        </tr>
+    {% endfor %}
+    <tr class="table-bottom">
+        <td colspan="4" class="text-end"><b>Total:</b></td>
+        <td colspan="2">{{ cart.total }} $</td>
+    </tr>
+    </tbody>
+</table>

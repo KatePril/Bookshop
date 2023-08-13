@@ -1,0 +1,5 @@
+<div class="block-content tags-container">
+    {% for tag in tags %}
+        <a href="{% url 'tag' slug=tag.slug %}" class="tag-link lead">#{{tag.name}}</a>
+    {% endfor %}
+</div>

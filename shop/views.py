@@ -58,12 +58,16 @@ class BookByCategory(ListViewBreadCrumbMixin):
     def get_queryset(self):
         self.category = Category.objects.get(slug=self.kwargs['slug'])
         queryset = Book.objects.filter(category=self.category)
+        # print(Book.objects.filter(category=self.category))
+        # print(Book.objects.all().first().category)
         return queryset
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["category"] = self.category
         context["categories"] = self.categories
+        print(Category.objects.get(slug=self.kwargs['slug']))
+        
         context['books'] = Book.objects.filter(category=Category.objects.get(slug=self.kwargs['slug']))
         return context    
     

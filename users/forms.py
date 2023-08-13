@@ -76,6 +76,8 @@ class BookForm(forms.ModelForm):
         book = super().save(commit=False)
         book.owner = user
         book.save()
+        print(book.category)
+        
             
         print(book.id)
         if self.cleaned_data['image']:

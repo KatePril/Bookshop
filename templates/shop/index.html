@@ -8,7 +8,9 @@
     {% if object_list %}
         <div class ='for-cards'>
             {% for category in object_list %}
-                <div class="block-content category-block card-3">
+            <div class=' card-3'>
+                <div class="block-content">
+                
                     <a href="{{ category.get_absolute_url }}" style="text-decoration: none;">
                         {% if category.image %}
                             <img src="{{ category.image.url }}" alt="{{ category.name }}" style="width:100%;">
@@ -17,7 +19,7 @@
                         {% endif %}
                         <h4 class="category-bottom">{{ category.name }}</h4>
                     </a>
-
+                </div>
                 </div>
             {% endfor %}
         </div>

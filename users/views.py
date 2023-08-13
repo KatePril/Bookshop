@@ -60,7 +60,7 @@ def profile_edit(request):
             return redirect('profile')
     else:
         form = EditProfileForm(instance=request.user)
-        return render(request, 'users/login_or_signup.html', {'title':'Edit Profile','form':form})
+    return render(request, 'users/login_or_signup.html', {'title':'Edit Profile','form':form})
 
 @login_required()
 def logout_view(request):
@@ -73,6 +73,7 @@ def create_product(request):
         form = BookForm(request.POST, request.FILES)
         if form.is_valid():
             book = form.save(user=request.user)
+            form.save_m2m()
             return redirect('book', slug=book.slug)
     else:
         form = BookForm()

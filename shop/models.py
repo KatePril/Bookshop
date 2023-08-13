@@ -31,14 +31,15 @@ class Category(MPTTModel, MetaTagMixin):
         blank=True,
         null=True
     )
-    image = ProcessedImageField(
-        upload_to='category/',
-        processors=[ResizeToFill(600, 400)],
-        format='JPEG',
-        options={'quality': 70},
-        blank=True,
-        null=True,
-    )
+    image = models.ImageField(upload_to='category/', blank=True, null=True)
+    # image = ProcessedImageField(
+    #     upload_to='category/',
+    #     processors=[ResizeToFill(600, 400)],
+    #     format='JPEG',
+    #     options={'quality': 70},
+    #     blank=True,
+    #     null=True,
+    # )
     
     def __str__(self):
         full_path = [self.name]
